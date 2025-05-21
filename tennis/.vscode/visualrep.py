@@ -9,10 +9,9 @@ data = {
     'Win Percentage': [85.5, 83.2, 81.5, 76.3, 74.2],
 }
 
-# Create a DataFrame
 df = pd.DataFrame(data)
 
-# Bar plot for Grand Slam wins
+# Bar plot 
 plt.figure(figsize=(10, 6))
 sns.barplot(x='Grand Slam Wins', y='Player', data=df, palette='viridis')
 plt.title('Grand Slam Wins by Players', fontsize=16)
@@ -21,7 +20,7 @@ plt.ylabel('Players')
 plt.grid(axis='x', linestyle='--', alpha=0.7)
 plt.show()
 
-# Line plot for win percentages
+# Line plot 
 plt.figure(figsize=(10, 6))
 sns.lineplot(x='Player', y='Win Percentage', data=df, marker='o', color='blue')
 plt.title('Win Percentage by Player', fontsize=16)
@@ -31,13 +30,13 @@ plt.xticks(rotation=45)
 plt.grid(linestyle='--', alpha=0.7)
 plt.show()
 
-# Pie chart for Grand Slam wins distribution
+# Pie chart 
 plt.figure(figsize=(8, 8))
 plt.pie(df['Grand Slam Wins'], labels=df['Player'], autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
 plt.title('Grand Slam Wins Distribution', fontsize=16)
 plt.show()
 
-# Heatmap of data correlation
+# Heatmap 
 plt.figure(figsize=(8, 5))
 sns.heatmap(df[['Grand Slam Wins', 'Win Percentage']].corr(), annot=True, cmap='coolwarm', cbar=True)
 plt.title('Correlation Heatmap', fontsize=16)
